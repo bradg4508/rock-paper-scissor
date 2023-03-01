@@ -3,7 +3,7 @@
 // Create a function to get the computer's choice of rock, paper, or scissors
 // The selection will be chosen at random
 function getComputerChoice() {
-    let choice = Math.floor(Math.random() * 3) + 1;
+    const choice = Math.floor(Math.random() * 3) + 1;
     if (choice === 1) {
         return "rock";
     } else if (choice === 2) {
@@ -16,7 +16,7 @@ function getComputerChoice() {
 // Create a function to get a player's choice of rock. paper, or scissors
 // The selection will be input from the player
 function getPlayerChoice() {
-    let choice = prompt("What would you like to choose: Rock, Paper, or Scissors", "");
+    const choice = prompt("What would you like to choose: Rock, Paper, or Scissors", "");
     return choice.toLowerCase();
 }
 
@@ -25,8 +25,8 @@ function getPlayerChoice() {
 // It will then return a string that declares the result of the round like so: "You Lose! Paper beats Rock"
 // There are responses for when the player either wins, loses, or ties
 function playRound (playerPick, computerPick) {
-    let playerPickCap = playerPick.charAt(0).toUpperCase() + playerPick.substring(1);
-    let computerPickCap = computerPick.charAt(0).toUpperCase() + computerPick.substring(1);
+    const playerPickCap = playerPick.charAt(0).toUpperCase() + playerPick.substring(1);
+    const computerPickCap = computerPick.charAt(0).toUpperCase() + computerPick.substring(1);
 
     if (playerPickCap === computerPickCap) {
         return `It's a tie! You both chose ${playerPickCap}.`
@@ -40,7 +40,7 @@ function playRound (playerPick, computerPick) {
 }
 
 // Create a function to call the playRound() function to simulate a game with multiple rounds
-// The game will consist of 5 rounds that provides updates of the score after each round
+// The game will consist of 5 rounds that provide updates of the score after each round
 // Once all rounds are complete, the game will tell the player the final score and whether or not they won
 function game() {
     let playerScore = 0;
@@ -58,7 +58,7 @@ function game() {
         console.log(roundResult);
         console.log(`Player: ${playerScore} Computer: ${computerScore}`);
     }
-    let finalResult = `Final Score\nPlayer: ${playerScore} Computer: ${computerScore}`;
+    const finalResult = `Final Score\nPlayer: ${playerScore} Computer: ${computerScore}`;
     if (playerScore === computerScore) {
         console.log(`${finalResult}\nThe computer is truly your equal.`);
     } else if (playerScore > computerScore) {
