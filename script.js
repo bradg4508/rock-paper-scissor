@@ -30,9 +30,9 @@ function playRound (playerPick, computerPick) {
 
     if (playerPickCap === computerPickCap) {
         return `It's a tie! You both chose ${playerPickCap}.`
-    } else if ((playerPickCap === "Rock" && computerPickCap === "Scissors") 
-    || (playerPickCap === "Paper" && computerPickCap === "Rock") 
-    || (playerPickCap === "Scissors" && computerPickCap === "Paper")) {
+    } else if ((playerPickCap === "Rock" && computerPickCap === "Scissors") || 
+               (playerPickCap === "Paper" && computerPickCap === "Rock") || 
+               (playerPickCap === "Scissors" && computerPickCap === "Paper")) {
         return `You Win! ${playerPickCap} beats ${computerPickCap}.`;
     } else {
         return `You Lose! ${computerPickCap} beats ${playerPickCap}.`;
