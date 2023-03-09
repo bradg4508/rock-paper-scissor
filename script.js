@@ -47,7 +47,7 @@ function game(e) {
     // Style the text content in the div to accept line breaks for cleaner output on the screen
     div.style.cssText = "white-space: pre";
     const newLine = "\r\n";
-    const currentScore = `PLAYER: ${playerScore}${newLine}COMPUTER: ${computerScore}`;
+    const currentScore = `PLAYER: ${playerScore}    COMPUTER: ${computerScore}`;
     div.textContent = `${roundResult}${newLine}${currentScore}`;
     
     if (playerScore === 5 || computerScore === 5) {
@@ -55,11 +55,11 @@ function game(e) {
         buttons.forEach((button) => button.removeEventListener("click", game));
     }
 
-    const finalResult = `GAME OVER!${newLine}${currentScore}`;
+    const finalResult = `${currentScore}${newLine}GAME OVER!`;
     if (playerScore >= 5) {
-        div.textContent = `${finalResult}${newLine}Congratulations, you have defeated the computer!`;
+        div.textContent = `${roundResult}${newLine}${finalResult}${newLine}Congratulations, you have defeated the computer!`;
     } else if (computerScore >= 5) {
-        div.textContent = `${finalResult}${newLine}The computer has bested you this time.`;
+        div.textContent = `${roundResult}${newLine}${finalResult}${newLine}The computer has bested you this time.`;
     }    
 }
 
