@@ -56,9 +56,9 @@ function game(e) {
     }
 
     const finalResult = `${currentScore}${newLine}GAME OVER!`;
-    if (playerScore >= 5) {
+    if (playerScore === 5) {
         div.textContent = `${roundResult}${newLine}${finalResult}${newLine}Congratulations, you have defeated the computer!`;
-    } else if (computerScore >= 5) {
+    } else if (computerScore === 5) {
         div.textContent = `${roundResult}${newLine}${finalResult}${newLine}The computer has bested you this time.`;
     }    
 }
